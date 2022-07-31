@@ -1,52 +1,57 @@
-<h1>Hola!</h1>
-
-<form [formGroup] = "signupForm" (ngSubmit)="enviar(signupForm.value)">
-    <label for="user">Usuario</label>
-    <input formControlName="usuario"  type="text" name="user"/><br><br>
-
+<header id="header">
+    <nav>
+        
     
-    <label for="email">E-mail</label>
-    <input formControlName="email"  type="email" name="email"/><br><br>
+    <a [routerLink]= "['/home']" [routerLinkActive] = "['active']">Home</a>
+    <a href="#sobrenosotros">About us</a>
+    <a href="#galeria">Gallery</a>
+    <a href="#servicios">Services</a>
+    <a [routerLink]= "['/tienda']" [routerLinkActive] = "['active']">Subscription</a>
+    <a [routerLink]= "['/contacto']" [routerLinkActive] = "['active']">Contact </a>
+    <a [routerLink]= "['/login']" [routerLinkActive] = "['active']" id="login" [class.login]= "identificado == true ">Login </a>
+    </nav>
     
+    <section class="textos-header">
+    <h1>Reading is a Factory of Dreams</h1>
+    <h2>Library Dr. Manuel Belgrano</h2>
+    </section>
     
-    <label for="pass">Clave</label>
-    <input formControlName="clave"  type="text" name="pass"/><br><br>
+    <div class="wave"  style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 345.56,-104.29 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    
+  <div *ngIf="identificado"  class="identificado" (click)="abrirMenu()" (dblclick)="cerrarMenu()">
+   <img src="../assets/user.png" alt="Usuario" style=" width: 70px;  ">
+  </div>
 
-
-    <button [disabled]="signupForm.invalid" type="submit">Entrar</button><br><br>
-
-
-
-    <button id="caja"  (click)="abrirMenu()" (dblclick)="cerrarMenu()">PERFIL</button>
-
-    <ul id="menu" *ngIf="menu">
-        <li><a href="">Mi perfil</a></li>
-        <li><a href="">Cambiar contraseña</a></li>
-        <li><a href="" (click)="cerrarSesion()">Cerrar sesion</a></li>
-    </ul>
-
-</form>
-
-<div id="promoMensual">
-    <h3>PROMO MENSUAL</h3>
-    <p>PRECIO {{promoMensual}}</p>
-    <button type="submit" (click)="eligePromo1()">Suscribirme</button>
-</div>
-
-<div id="promoMensual">
-    <h3>PROMO SEMESTRAL</h3>
-    <p>PRECIO {{promoSemestral}}</p>
-    <button type="submit" (click)="eligePromo2()">Suscribirme</button>
-</div>
-
-<div id="promoMensual">
-    <h3>PROMO ANUAL</h3>
-    <p>PRECIO {{promoAnual}}</p>
-    <button type="submit" (click)="eligePromo3()">Suscribirme</button>
+<div  id="miperfil"  *ngIf="menu">
+  <ul id="menu" >
+    <li><a href="">My profile</a></li>
+    <li><a href="">Change Password</a></li>
+    <li><a href="" (click)="cerrarSesion()">Log out</a></li>
+</ul>
 </div>
 
 
-<div id="carrito">
-    {{promo}}
-    {{promoElegida}}
-</div>
+</header>
+
+
+
+<!--
+<app-sobre-nosotros></app-sobre-nosotros>
+ 
+<app-galeria></app-galeria>
+
+<app-servicios></app-servicios>
+
+<app-contacto></app-contacto>
+
+<app-footer></app-footer>
+
+<app-login></app-login>
+
+<app-registrarse></app-registrarse>
+
+<app-tienda></app-tienda>
+-->
+<router-outlet></router-outlet>
+
+
