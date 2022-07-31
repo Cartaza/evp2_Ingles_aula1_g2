@@ -1,0 +1,45 @@
+<header >
+    <nav>
+        
+    
+    <a [routerLink]= "['/home']" [routerLinkActive] = "['active']">Home</a>
+    <a href="#sobrenosotros">About us</a>
+    <a href="#galeria">Gallery</a>
+    <a href="#servicios">Services</a>
+    <a [routerLink]= "['/tienda']" [routerLinkActive] = "['active']">Subscription</a>
+    <a [routerLink]= "['/contacto']" [routerLinkActive] = "['active']">Contact </a>
+    <a [routerLink]= "['/login']" [routerLinkActive] = "['active']">Login</a>
+    </nav>
+    
+    <section class="textos-header">
+    <h1>
+        Reading is a Factory of Dreams</h1>
+    <h2>Library Dr. Manuel Belgrano </h2>
+    </section>
+    
+    <div class="wave"  style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C150.00,150.00 345.56,-104.29 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    
+</header>
+
+
+
+<!--
+<app-sobre-nosotros></app-sobre-nosotros>
+ 
+<app-galeria></app-galeria>
+
+<app-servicios></app-servicios>
+
+<app-contacto></app-contacto>
+
+<app-footer></app-footer>
+
+<app-login></app-login>
+
+<app-registrarse></app-registrarse>
+
+<app-tienda></app-tienda>
+-->
+<router-outlet></router-outlet>
+
+
